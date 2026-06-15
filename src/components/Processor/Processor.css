@@ -1,0 +1,124 @@
+.processor {
+  max-width: 860px;
+}
+
+.proc-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a2e;
+}
+
+.proc-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.proc-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.proc-select, .proc-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: #fafafa;
+  color: #1a1a2e;
+}
+
+.proc-select:focus, .proc-input:focus { outline: none; border-color: #1a1a2e; }
+
+.proc-hint { font-size: 0.78rem; color: #888; }
+
+.proc-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-primary-proc {
+  padding: 0.55rem 1.25rem;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.btn-primary-proc:hover { opacity: 0.85; }
+
+.btn-secondary-proc {
+  padding: 0.55rem 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #444;
+}
+
+.btn-secondary-proc:hover { background: #f0f0f0; }
+
+.proc-preview, .proc-relatorio {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.proc-section-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin-bottom: 0.75rem;
+}
+
+.table-scroll { overflow-x: auto; }
+
+.proc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.proc-table th {
+  padding: 0.4rem 0.75rem;
+  background: #f4f5f7;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: left;
+  color: #555;
+  font-weight: 600;
+}
+
+.proc-table td {
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.proc-relatorio p { margin-bottom: 0.35rem; font-size: 0.875rem; }
+
+.proc-erros {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.8rem;
+  color: #e53e3e;
+}
+
+.proc-error { color: #e53e3e; font-size: 0.875rem; margin-bottom: 1rem; }
+.proc-msg   { color: #888; font-size: 0.875rem; }

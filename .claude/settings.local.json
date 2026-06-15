@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm create *)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(timeout 5)",
+      "Bash(Start-Sleep -Seconds 4)",
+      "Bash(Get-Content \"C:\\\\Users\\\\VITOR~1.BOR\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-vitor-borrasca-Desktop-sheets-convert\\\\49bb0390-187a-4a82-b36c-939e4ee06ca3\\\\tasks\\\\bg5nzw2j1.output\")",
+      "Read(//c/Users/vitor.borrasca/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/9ec08456-b09b-4160-bdf9-45390c566acf/c4a59639-acf5-468f-840b-22286efdd244/skills/xlsx/**)",
+      "Bash(python -c ' *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)"
+    ]
+  }
+}

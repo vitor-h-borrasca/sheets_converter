@@ -1,0 +1,90 @@
+.config-manager {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.config-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-nav, .canal-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.config-nav button, .canal-nav button {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #444;
+  transition: background 0.15s;
+}
+
+.config-nav button:hover, .canal-nav button:hover { background: #f0f0f0; }
+.config-nav button.active, .canal-nav button.active { background: #1a1a2e; color: #fff; }
+
+.sidebar-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
+}
+
+.canal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.canal-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.15s;
+}
+
+.canal-list li:hover { background: #f0f0f0; }
+.canal-list li.active { background: #e8e8f0; font-weight: 600; color: #1a1a2e; }
+
+.btn-delete-canal {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+  line-height: 1;
+  border-radius: 4px;
+}
+.btn-delete-canal:hover { color: #e53e3e; background: #fff0f0; }
+
+.config-body {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.error-msg { color: #e53e3e; padding: 1rem; }
+.loading-msg { color: #888; padding: 1rem; }
