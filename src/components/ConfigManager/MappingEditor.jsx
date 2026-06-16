@@ -73,15 +73,18 @@ export default function MappingEditor({ canal }) {
         <div className="mapping-col">
           <p className="mapping-col-title">ANYMARKET</p>
           {anySchema.length === 0 && <p className="form-hint">Schema do ANY não configurado.</p>}
-          {anySchema.map(c => (
-            <button
-              key={c.posicao}
-              className={`mapping-item ${selAny === c.posicao ? 'selected' : ''}`}
-              onClick={() => setSelAny(selAny === c.posicao ? null : c.posicao)}
-            >
-              <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
-            </button>
-          ))}
+          {anySchema.map(c => {
+            const mapeado = pares.some(p => p.posicao_any === c.posicao && p.ativo)
+            return (
+              <button
+                key={c.posicao}
+                className={`mapping-item ${selAny === c.posicao ? 'selected' : ''} ${mapeado ? 'mapped' : ''}`}
+                onClick={() => setSelAny(selAny === c.posicao ? null : c.posicao)}
+              >
+                <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
+              </button>
+            )
+          })}
         </div>
 
         <div className="mapping-actions-center">
@@ -93,15 +96,19 @@ export default function MappingEditor({ canal }) {
         <div className="mapping-col">
           <p className="mapping-col-title">{canal.nome}</p>
           {template.length === 0 && <p className="form-hint">Template não configurado.</p>}
-          {template.map(c => (
-            <button
-              key={c.posicao}
-              className={`mapping-item ${selCanal === c.posicao ? 'selected' : ''}`}
-              onClick={() => setSelCanal(selCanal === c.posicao ? null : c.posicao)}
-            >
-              <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
-            </button>
-          ))}
+          {template.map(c => {
+            const par = pares.find(p => p.posicao_canal === c.posicao && p.ativo)
+            return (
+              <button
+                key={c.posicao}
+                className={`mapping-item ${selCanal === c.posicao ? 'selected' : ''} ${par ? 'mapped' : ''}`}
+                onClick={() => setSelCanal(selCanal === c.posicao ? null : c.posicao)}
+              >
+                <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
+                {par && <span className="mapping-badge">{par.posicao_any}</span>}
+              </button>
+            )
+          })}
         </div>
       </div>
 

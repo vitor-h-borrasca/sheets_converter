@@ -32,6 +32,27 @@
 
 .mapping-item:hover { background: #f0f0f0; border-color: #ccc; }
 .mapping-item.selected { background: #e8e8f8; border-color: #1a1a2e; color: #1a1a2e; font-weight: 600; }
+.mapping-item.mapped { background: #f0faf4; border-color: #4caf82; color: #1e6e45; }
+.mapping-item.mapped:hover { background: #e4f5ec; }
+.mapping-item.mapped.selected { background: #d4eddf; border-color: #1e6e45; }
+
+.mapping-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.mapping-badge {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #4caf82;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
 
 .mapping-actions-center {
   display: flex;
