@@ -9,7 +9,10 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Sheet Converter</h1>
+        <div className="app-brand">
+          <span className="brand-any">ANY</span><span className="brand-market">MARKET</span>
+          <span className="brand-sub">Sheet Converter</span>
+        </div>
         <nav className="app-tabs">
           <button
             className={tab === 'processor' ? 'active' : ''}
@@ -27,7 +30,9 @@ export default function App() {
       </header>
 
       <main className="app-content">
-        {tab === 'processor' ? <Processor /> : <ConfigManager />}
+        {tab === 'processor'
+          ? <Processor />
+          : <ConfigManager onTabChange={setTab} />}
       </main>
     </div>
   )

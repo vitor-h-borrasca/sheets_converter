@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { driveService } from '../../services/driveService.js'
 import { sheetParser } from '../../services/sheetParser.js'
 import { convert } from '../../services/processor.js'
+import HelpPanel from '../HelpPanel/HelpPanel.jsx'
 import * as XLSX from 'xlsx'
 import './Processor.css'
 
@@ -140,6 +141,7 @@ export default function Processor() {
   if (loadingCanais) return <p className="proc-msg">Carregando canais...</p>
 
   return (
+    <div className="processor-layout">
     <div className="processor">
       <h2 className="proc-title">Processor</h2>
 
@@ -220,6 +222,8 @@ export default function Processor() {
           )}
         </div>
       )}
+    </div>
+    <HelpPanel contexto="processor" />
     </div>
   )
 }

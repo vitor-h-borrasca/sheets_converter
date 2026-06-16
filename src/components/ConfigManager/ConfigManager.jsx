@@ -4,6 +4,7 @@ import CanalForm from './CanalForm.jsx'
 import AnySchemaEditor from './AnySchemaEditor.jsx'
 import TemplateUpload from './TemplateUpload.jsx'
 import MappingEditor from './MappingEditor.jsx'
+import HelpPanel from '../HelpPanel/HelpPanel.jsx'
 import './ConfigManager.css'
 
 export default function ConfigManager() {
@@ -45,6 +46,7 @@ export default function ConfigManager() {
 
   return (
     <div className="config-manager">
+      <HelpPanel contexto={secao} />
       <aside className="config-sidebar">
         <nav className="config-nav">
           <button className={secao === 'canal' ? 'active' : ''} onClick={() => setSecao('canal')}>

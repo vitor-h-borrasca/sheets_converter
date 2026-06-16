@@ -1,5 +1,12 @@
+.processor-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
 .processor {
-  max-width: 860px;
+  flex: 1;
+  min-width: 0;
 }
 
 .proc-title {

@@ -6,21 +6,50 @@
 
 .app-header {
   background: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e8e8e8;
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   height: 56px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-.app-header h1 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1a1a2e;
+/* Brand */
+.app-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
+.brand-any {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #F15A24;
+  letter-spacing: -0.5px;
+}
+
+.brand-market {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #aaa;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-left: 0.4rem;
+  border-left: 1px solid #ddd;
+  margin-left: 0.1rem;
+}
+
+/* Tabs */
 .app-tabs {
   display: flex;
   gap: 0.25rem;
@@ -36,19 +65,17 @@
   transition: background 0.15s, color 0.15s;
 }
 
-.app-tabs button:hover {
-  background: #f0f0f0;
-}
+.app-tabs button:hover { background: #f5f5f5; }
 
 .app-tabs button.active {
-  background: #1a1a2e;
+  background: #F15A24;
   color: #fff;
 }
 
 .app-content {
   flex: 1;
   padding: 2rem;
-  max-width: 1100px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
