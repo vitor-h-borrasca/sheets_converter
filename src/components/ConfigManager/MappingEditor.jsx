@@ -38,6 +38,13 @@ export default function MappingEditor({ canal }) {
     setSelCanal(null)
   }
 
+  function desconectar() {
+    if (!selAny || !selCanal) return
+    setPares(prev => prev.filter(p => !(p.posicao_any === selAny && p.posicao_canal === selCanal)))
+    setSelAny(null)
+    setSelCanal(null)
+  }
+
   function removerPar(i) {
     setPares(prev => prev.filter((_, idx) => idx !== i))
   }
@@ -90,6 +97,9 @@ export default function MappingEditor({ canal }) {
         <div className="mapping-actions-center">
           <button className="btn-connect" onClick={conectar} disabled={!selAny || !selCanal}>
             Conectar →
+          </button>
+          <button className="btn-disconnect" onClick={desconectar} disabled={!selAny || !selCanal || !pares.some(p => p.posicao_any === selAny && p.posicao_canal === selCanal)}>
+            Desconectar ✕
           </button>
         </div>
 

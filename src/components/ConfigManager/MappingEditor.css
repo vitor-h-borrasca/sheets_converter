@@ -75,4 +75,18 @@
   cursor: not-allowed;
 }
 
+.btn-disconnect {
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}
+
+.btn-disconnect:hover:not(:disabled) { background: #fdf0ef; }
+.btn-disconnect:disabled { border-color: #ccc; color: #ccc; cursor: not-allowed; }
+
 .row-inativo td { opacity: 0.45; }
