@@ -13,6 +13,8 @@ export default function MappingEditor({ canal }) {
   const [sucesso, setSucesso]       = useState(false)
   const [selAny, setSelAny]         = useState(null)
   const [selCanal, setSelCanal]     = useState(null)
+  const [buscaAny, setBuscaAny]     = useState('')
+  const [buscaCanal, setBuscaCanal] = useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -79,19 +81,29 @@ export default function MappingEditor({ canal }) {
       <div className="mapping-panels">
         <div className="mapping-col">
           <p className="mapping-col-title">ANYMARKET</p>
-          {anySchema.length === 0 && <p className="form-hint">Schema do ANY não configurado.</p>}
-          {anySchema.map(c => {
-            const mapeado = pares.some(p => p.posicao_any === c.posicao && p.ativo)
-            return (
-              <button
-                key={c.posicao}
-                className={`mapping-item ${selAny === c.posicao ? 'selected' : ''} ${mapeado ? 'mapped' : ''}`}
-                onClick={() => setSelAny(selAny === c.posicao ? null : c.posicao)}
-              >
-                <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
-              </button>
-            )
-          })}
+          <input
+            className="mapping-search"
+            placeholder="Pesquisar..."
+            value={buscaAny}
+            onChange={e => setBuscaAny(e.target.value)}
+          />
+          <div className="mapping-scroll">
+            {anySchema.length === 0 && <p className="form-hint">Schema do ANY não configurado.</p>}
+            {anySchema
+              .filter(c => c.nome_coluna.toLowerCase().includes(buscaAny.toLowerCase()) || c.posicao.toLowerCase().includes(buscaAny.toLowerCase()))
+              .map(c => {
+                const mapeado = pares.some(p => p.posicao_any === c.posicao && p.ativo)
+                return (
+                  <button
+                    key={c.posicao}
+                    className={`mapping-item ${selAny === c.posicao ? 'selected' : ''} ${mapeado ? 'mapped' : ''}`}
+                    onClick={() => setSelAny(selAny === c.posicao ? null : c.posicao)}
+                  >
+                    <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
+                  </button>
+                )
+              })}
+          </div>
         </div>
 
         <div className="mapping-actions-center">
@@ -105,20 +117,30 @@ export default function MappingEditor({ canal }) {
 
         <div className="mapping-col">
           <p className="mapping-col-title">{canal.nome}</p>
-          {template.length === 0 && <p className="form-hint">Template não configurado.</p>}
-          {template.map(c => {
-            const par = pares.find(p => p.posicao_canal === c.posicao && p.ativo)
-            return (
-              <button
-                key={c.posicao}
-                className={`mapping-item ${selCanal === c.posicao ? 'selected' : ''} ${par ? 'mapped' : ''}`}
-                onClick={() => setSelCanal(selCanal === c.posicao ? null : c.posicao)}
-              >
-                <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
-                {par && <span className="mapping-badge">{par.posicao_any}</span>}
-              </button>
-            )
-          })}
+          <input
+            className="mapping-search"
+            placeholder="Pesquisar..."
+            value={buscaCanal}
+            onChange={e => setBuscaCanal(e.target.value)}
+          />
+          <div className="mapping-scroll">
+            {template.length === 0 && <p className="form-hint">Template não configurado.</p>}
+            {template
+              .filter(c => c.nome_coluna.toLowerCase().includes(buscaCanal.toLowerCase()) || c.posicao.toLowerCase().includes(buscaCanal.toLowerCase()))
+              .map(c => {
+                const par = pares.find(p => p.posicao_canal === c.posicao && p.ativo)
+                return (
+                  <button
+                    key={c.posicao}
+                    className={`mapping-item ${selCanal === c.posicao ? 'selected' : ''} ${par ? 'mapped' : ''}`}
+                    onClick={() => setSelCanal(selCanal === c.posicao ? null : c.posicao)}
+                  >
+                    <span className="col-pos">{c.posicao}</span> {c.nome_coluna}
+                    {par && <span className="mapping-badge">{par.posicao_any}</span>}
+                  </button>
+                )
+              })}
+          </div>
         </div>
       </div>
 
