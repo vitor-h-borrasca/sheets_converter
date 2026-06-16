@@ -56,8 +56,10 @@
 
 .mapping-actions-center {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   padding-top: 1.5rem;
+  gap: 0.5rem;
 }
 
 .btn-connect {
@@ -83,7 +85,6 @@
   border-radius: 6px;
   font-size: 0.85rem;
   white-space: nowrap;
-  margin-top: 0.5rem;
 }
 
 .btn-disconnect:hover:not(:disabled) { background: #fdf0ef; }
