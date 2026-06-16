@@ -122,6 +122,37 @@
   font-family: monospace;
 }
 
+.form-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #1a1a2e;
+  background: #fafafa;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.form-select:focus { outline: none; border-color: #1a1a2e; background: #fff; }
+
+.template-options {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.template-options .form-label { flex: 1; min-width: 160px; }
+
+.header-row-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-row-input .form-input { width: 80px; }
+
 .file-upload-label {
   display: inline-block;
   padding: 0.5rem 1rem;
